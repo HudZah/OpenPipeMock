@@ -12,14 +12,24 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 
 export function CardLogin() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleLogin = () => {
+        if (email === "username" && password == "password") {
+            alert("Logged in");
+        }
+    };
+
     return (
         <Card>
             <CardHeader className="space-y-1">
-                <CardTitle className="text-2xl">Create an account</CardTitle>
+                <CardTitle className="text-2xl">Login</CardTitle>
                 <CardDescription>
-                    Enter your email below to create your account
+                    Enter your email below to login to your account
                 </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
@@ -49,15 +59,24 @@ export function CardLogin() {
                         id="email"
                         type="email"
                         placeholder="m@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="grid gap-2">
                     <Label htmlFor="password">Password</Label>
-                    <Input id="password" type="password" />
+                    <Input
+                        id="password"
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                 </div>
             </CardContent>
             <CardFooter>
-                <Button className="w-full">Create account</Button>
+                <Button className="w-full" onClick={handleLogin}>
+                    Login
+                </Button>
             </CardFooter>
         </Card>
     );
