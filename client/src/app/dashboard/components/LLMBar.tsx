@@ -1,7 +1,9 @@
+// @jsxImportSource react-client
+
 import React from 'react';
 import { Box, Typography, Button, AppBar, Toolbar, Stack } from '@mui/material';
 
-export default function VerticalNavbar() {
+export default function Bar({ llm, setLlm }: any) {
   return (
     <AppBar
       position="fixed"
@@ -26,11 +28,35 @@ export default function VerticalNavbar() {
         justifyContent="flex-start"
         sx={{ px: 2, py: 1 }}
       >
-        <Button color="inherit" href="https://www.google.com">
+        <Button
+          color="inherit"
+          href="https://www.google.com"
+          sx={
+            llm === 'Google'
+              ? { backgroundColor: 'rgba(255, 255, 255, 0.1)' }
+              : {}
+          }
+          onClick={(e) => {
+            e.preventDefault(); // Prevent navigation
+            setLlm('Google');
+          }}
+        >
           Google
         </Button>
-        <Button color="inherit" href="https://www.openai.com">
-          OpenAI
+        <Button
+          color="inherit"
+          href="https://www.openai.com"
+          sx={
+            llm === 'OpenAI'
+              ? { backgroundColor: 'rgba(255, 255, 255, 0.1)' }
+              : {}
+          }
+          onClick={(e) => {
+            e.preventDefault(); // Prevent navigation
+            setLlm('OpenAI');
+          }}
+        >
+          Open AI
         </Button>
         {/* Add more buttons as needed */}
       </Stack>

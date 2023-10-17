@@ -14,7 +14,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useState } from 'react';
 
-export function CardLogin() {
+export function LLMCard() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -27,9 +27,9 @@ export function CardLogin() {
   return (
     <Card>
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">Login</CardTitle>
+        <CardTitle className="text-2xl">LLM Usage</CardTitle>
         <CardDescription>
-          Enter your email below to login to your account
+          View your LLM Usage by provider below.
         </CardDescription>
       </CardHeader>
       <CardContent className="grid gap-4">
