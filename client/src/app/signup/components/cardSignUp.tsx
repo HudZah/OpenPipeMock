@@ -1,29 +1,29 @@
-"use client"
+'use client';
 
-import * as React from "react"
+import * as React from 'react';
 
-import { cn } from "@/lib/utils"
-import { Icons } from "@/components/ui/icons"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { cn } from '@/lib/utils';
+import { Icons } from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function CardSignUp({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   async function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
+    event.preventDefault();
+    setIsLoading(true);
 
     setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+      setIsLoading(false);
+    }, 3000);
   }
 
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
+    <div className={cn('grid gap-6', className)} {...props}>
       <form onSubmit={onSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">
@@ -58,16 +58,16 @@ export function CardSignUp({ className, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-     <div className="grid grid-cols-2 gap-6">
-                    <Button variant="outline">
-                        <Icons.gitHub className="mr-2 h-4 w-4" />
-                        Github
-                    </Button>
-                    <Button variant="outline">
-                        <Icons.google className="mr-2 h-4 w-4" />
-                        Google
-                    </Button>
-                </div>
+      <div className="grid grid-cols-2 gap-6">
+        <Button variant="outline">
+          <Icons.gitHub className="mr-2 h-4 w-4" />
+          Github
+        </Button>
+        <Button variant="outline">
+          <Icons.google className="mr-2 h-4 w-4" />
+          Google
+        </Button>
+      </div>
     </div>
-  )
+  );
 }

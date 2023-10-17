@@ -1,17 +1,22 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { cn } from "@/lib/utils"
-import { buttonVariants } from "@/components/ui/button"
-import { CardSignUp } from "@/app/signup/components/cardSignUp"
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
+import { CardSignUp } from '@/app/signup/components/cardSignUp';
+import { useEffect } from 'react';
 
-export const metadata: Metadata = {
-  title: "Authentication",
-  description: "Authentication forms built using the components.",
-}
+export default function SignUp() {
+  useEffect(() => {
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
 
-export default function AuthenticationPage() {
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, []);
+
   return (
     <>
       <div className="md:hidden">
@@ -34,8 +39,8 @@ export default function AuthenticationPage() {
         <Link
           href="/login"
           className={cn(
-            buttonVariants({ variant: "ghost" }),
-            "absolute right-4 top-4 md:right-8 md:top-8"
+            buttonVariants({ variant: 'ghost' }),
+            'absolute right-4 top-4 md:right-8 md:top-8',
           )}
         >
           Login
@@ -60,8 +65,9 @@ export default function AuthenticationPage() {
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
-                Revolutionizing the digital marketplace by connecting startups with top-tier LLM APIs              
-                </p>
+                Revolutionizing the digital marketplace by connecting startups
+                with top-tier LLM APIs
+              </p>
             </blockquote>
           </div>
         </div>
@@ -77,14 +83,14 @@ export default function AuthenticationPage() {
             </div>
             <CardSignUp />
             <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{" "}
+              By clicking continue, you agree to our{' '}
               <Link
                 href="/terms"
                 className="underline underline-offset-4 hover:text-primary"
               >
                 Terms of Service
-              </Link>{" "}
-              and{" "}
+              </Link>{' '}
+              and{' '}
               <Link
                 href="/privacy"
                 className="underline underline-offset-4 hover:text-primary"
@@ -97,5 +103,5 @@ export default function AuthenticationPage() {
         </div>
       </div>
     </>
-  )
+  );
 }
