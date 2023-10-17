@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Icons } from "@/components/ui/icons";
-import { Button } from "@/components/ui/button";
+import { Icons } from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
 import {
     Card,
     CardContent,
