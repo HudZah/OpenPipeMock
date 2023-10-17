@@ -64,7 +64,7 @@ export default function SignUp() {
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
-              <p className="text-lg">
+              <p className="text-lg mb-6">
                 Revolutionizing the digital marketplace by connecting startups
                 with top-tier LLM APIs
               </p>
