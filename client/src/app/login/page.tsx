@@ -1,7 +1,9 @@
-import Image from 'next/image'
+import { CardLogin } from "@/components/card_login";
 
 export default function Home() {
-  return (  
-    <h1>Login</h1>
-  )
+    return (
+        <div className="flex items-center justify-center h-screen">
+            <CardLogin />
+        </div>
+    );
 }
