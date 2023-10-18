@@ -254,7 +254,7 @@ export function Playground() {
                   <div className="flex h-full flex-col space-y-4">
                     <Textarea
                       placeholder="Write a tagline for an ice cream shop"
-                      className="min-h-[400px] flex-1 p-4 md:min-h-[700px] lg:min-h-[700px]"
+                      className="min-h-[400px] flex-1 p-4 md:min-h-[500px] lg:min-h-[500px]"
                     />
                     <div className="flex items-center space-x-2">
                       <Button>Submit</Button>
@@ -270,7 +270,7 @@ export function Playground() {
                     <div className="grid h-full grid-rows-2 gap-6 lg:grid-cols-2 lg:grid-rows-1">
                       <Textarea
                         placeholder="We're writing to [inset]. Congrats from OpenAI!"
-                        className="h-full min-h-[300px] lg:min-h-[700px] xl:min-h-[700px]"
+                        className="h-full min-h-[300px] lg:min-h-[500px] xl:min-h-[500px]"
                       />
                       <div className="rounded-md border bg-muted"></div>
                     </div>

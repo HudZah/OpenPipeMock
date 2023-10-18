@@ -1,8 +1,16 @@
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
-import { ScrollArea } from '@/components/ui/scroll-area';
-import { useRouter, usePathname } from 'next/navigation';
-import { useState } from 'react';
+import {
+  LayoutDashboard,
+  Library,
+  Store,
+  FlaskConical,
+  User,
+  Settings,
+  Bell,
+  CreditCard,
+  LogOut,
+} from 'lucide-react';
 
 export function Sidebar({
   className,
@@ -25,6 +33,7 @@ export function Sidebar({
               className="w-full justify-start"
               onClick={() => navigateTo('/dashboard')}
             >
+              <LayoutDashboard className="mr-2 h-4 w-4" />
               Dashboard
             </Button>
             <Button
@@ -32,6 +41,7 @@ export function Sidebar({
               className="w-full justify-start"
               onClick={() => navigateTo('/library')}
             >
+              <Library className="mr-2 h-4 w-4" />
               Library
             </Button>
             <Button
@@ -41,6 +51,7 @@ export function Sidebar({
               className="w-full justify-start"
               onClick={() => navigateTo('/marketplace')}
             >
+              <Store className="mr-2 h-4 w-4" />
               Marketplace
             </Button>
             <Button
@@ -48,6 +59,7 @@ export function Sidebar({
               className="w-full justify-start"
               onClick={() => navigateTo('/playground')}
             >
+              <FlaskConical className="mr-2 h-4 w-4" />
               Playground
             </Button>
           </div>
@@ -63,6 +75,7 @@ export function Sidebar({
             className="w-full justify-start"
             onClick={() => navigateTo('/profile')}
           >
+            <User className="mr-2 h-4 w-4" />
             Profile
           </Button>
           <Button
@@ -70,6 +83,7 @@ export function Sidebar({
             className="w-full justify-start"
             onClick={() => navigateTo('/settings')}
           >
+            <Settings className="mr-2 h-4 w-4" />
             Settings
           </Button>
           <Button
@@ -79,6 +93,7 @@ export function Sidebar({
             className="w-full justify-start"
             onClick={() => navigateTo('/notifications')}
           >
+            <Bell className="mr-2 h-4 w-4" />
             Notifications
           </Button>
           <Button
@@ -86,6 +101,7 @@ export function Sidebar({
             className="w-full justify-start"
             onClick={() => navigateTo('/billing')}
           >
+            <CreditCard className="mr-2 h-4 w-4" />
             Billing
           </Button>
           <Button
@@ -93,6 +109,7 @@ export function Sidebar({
             className="w-full justify-start"
             onClick={() => navigateTo('/logout')}
           >
+            <LogOut className="mr-2 h-4 w-4" />
             Logout
           </Button>
         </div>

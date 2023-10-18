@@ -6,31 +6,34 @@ import { useEffect, useState } from 'react';
 import { Sidebar } from '@/app/home/components/sidebar';
 import { Playground } from './components/playground';
 import { Topbar } from './components/topbar';
+import { Dashboard } from './components/dashboard';
+import { Library } from './components/library';
+import { Marketplace } from './components/marketplace';
 
 export default function HomePage() {
   const [currentComponent, setCurrentComponent] = useState('dashboard');
 
   let Component = Playground; // default component
-  //   switch (currentComponent) {
-  //     case 'dashboard':
-  //       //   Component = Dashboard;
-  //       break;
-  //     case 'library':
-  //       //   Component = Library;
-  //       break;
-  //     // add other cases...
-  //     case 'marketplace':
-  //       //   Component = Marketplace;
-  //       break;
+  switch (currentComponent) {
+    case '/dashboard':
+      Component = Dashboard;
+      break;
+    case '/library':
+      Component = Library;
+      break;
+    case '/marketplace':
+      Component = Marketplace;
+      break;
 
-  //     case 'playground':
-  //       Component = Playground;
-  //       break;
+    case '/playground':
+      Component = Playground;
+      break;
 
-  //     default:
-  //       Component = Playground; // default component
-  //       break;
-  //   }
+    default:
+      Component = Playground; // default component
+      console.log(currentComponent);
+      break;
+  }
 
   const handleNavigation = (component: string) => {
     setCurrentComponent(component);
