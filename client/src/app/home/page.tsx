@@ -30,7 +30,7 @@ export default function HomePage() {
       break;
 
     default:
-      Component = Playground; // default component
+      Component = Dashboard; // default component
       console.log(currentComponent);
       break;
   }
