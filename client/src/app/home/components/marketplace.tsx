@@ -18,7 +18,7 @@ export function Marketplace() {
         </h1>
       </Box> */}
       <div className="container flex flex-col items-start justify-between space-y-2 py-4 sm:flex-row sm:items-center sm:space-y-0 md:h-16">
-        <h2 className="text-lg font-semibold">Models</h2>
+        <h2 className="text-lg font-semibold">Marketplace</h2>
         <div className="relative">
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
