@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect } from 'react';
 import { CardLogin } from '@/app/login/components/cardLogin';
 import { Button } from '@/components/ui/button';

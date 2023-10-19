@@ -43,13 +43,13 @@ export default function HomePage() {
     <div className="hidden md:block">
       <Topbar />
       <div className="border-t">
-        <div className="grid lg:grid-cols-5">
+        <div className="grid lg:grid-cols-7">
           <Sidebar
             className="hidden lg:block"
             navigateTo={handleNavigation}
             currentComponent={currentComponent}
           />
-          <div className="col-span-3 lg:col-span-4 lg:border-l">
+          <div className="col-span-6 lg:border-l">
             <Component />
           </div>
         </div>

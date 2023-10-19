@@ -1,18 +1,21 @@
 'use client';
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import { LLMCard } from './components/LLMCard';
+import { ModelCard } from '../home/components/ModelCard';
 
-export default function Home() {
+export default function Marketplace() {
   const [llm, setLlm] = useState('Google');
 
   return (
     <Box display="flex">
       <Box ml="240px" width="calc(100% - 240px)">
         <Box display="flex" flexDirection="row">
-            <Typography variant="h1" fontSize={24}>Models</Typography>
+          <Typography variant="h1" fontSize={24}>
+            Models
+          </Typography>
         </Box>
-        <LLMCard
+        {/* <ModelCard /> */}
+        {/* <LLMCard
           title="OpenAI GPT-3.502"
           description="Text Generation"
           downloads={26600}
@@ -32,7 +35,7 @@ export default function Home() {
           downloads={26600}
           likes={597}
           moreContent="Here's more detailed content about this card that will be shown when expanded."
-        />
+        /> */}
       </Box>
     </Box>
   );
