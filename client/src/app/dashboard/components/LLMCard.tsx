@@ -1,83 +1,64 @@
 'use client';
+import React from 'react';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Box from '@mui/material/Box';
 
-import { Icons } from '@/components/ui/icons';
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { useState } from 'react';
+interface LLMCardProps {
+  title: string;
+  description: string;
+  downloads: number;
+  likes: number;
+  moreContent: string;
+}
 
-export function LLMCard() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = () => {
-    if (email === 'username' && password == 'password') {
-      alert('Logged in');
-    }
-  };
-
+export function LLMCard({
+  title,
+  description,
+  downloads,
+  likes,
+  moreContent,
+}: LLMCardProps) {
   return (
-    <Card>
-      <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl">LLM Usage</CardTitle>
-        <CardDescription>
-          View your LLM Usage by provider below.
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
-        <div className="grid grid-cols-2 gap-6">
-          <Button variant="outline">
-            <Icons.gitHub className="mr-2 h-4 w-4" />
-            Github
-          </Button>
-          <Button variant="outline">
-            <Icons.google className="mr-2 h-4 w-4" />
-            Google
-          </Button>
-        </div>
-        <div className="relative">
-          <div className="absolute inset-0 flex items-center">
-            <span className="w-full border-t" />
-          </div>
-          <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-background px-2 text-muted-foreground">
-              Or continue with
-            </span>
-          </div>
-        </div>
-        <div className="grid gap-2">
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            placeholder="m@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="grid gap-2">
-          <Label htmlFor="password">Password</Label>
-          <Input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full" onClick={handleLogin}>
-          Login
-        </Button>
-      </CardFooter>
+    <Card variant="outlined">
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel-content"
+          id="panel-header"
+        >
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="start"
+            flexGrow={1}
+          >
+            <Typography variant="h6">{title}</Typography>
+            <Box display="flex" flexDirection="row" alignItems="center">
+              <Typography variant="body1">{description}</Typography>
+              <IconButton aria-label="downloads">
+                <ArrowDownwardIcon />
+                <Typography variant="body2">{downloads}</Typography>
+              </IconButton>
+              <IconButton aria-label="likes">
+                <FavoriteIcon />
+                <Typography variant="body2">{likes}</Typography>
+              </IconButton>
+            </Box>
+          </Box>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>{moreContent}</Typography>
+        </AccordionDetails>
+      </Accordion>
     </Card>
   );
 }

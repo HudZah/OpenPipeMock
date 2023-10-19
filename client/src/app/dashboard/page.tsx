@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { Box } from '@mui/material';
-import Bar from './components/LLMBar';
+import { Box, Typography } from '@mui/material';
+import {Bar} from './components/LLMBar';
 import { LLMCard } from './components/LLMCard';
 
 export default function Home() {
@@ -11,9 +11,30 @@ export default function Home() {
     <Box display="flex">
       <Bar llm={llm} setLlm={setLlm} />
       <Box ml="240px" width="calc(100% - 240px)">
-        {' '}
-        {/* Assuming the Bar's width is 240px */}
-        <LLMCard />
+        <Box display="flex" flexDirection="row">
+            <Typography variant="h1" fontSize={24}>Models</Typography>
+        </Box>
+        <LLMCard
+          title="OpenAI GPT-3.502"
+          description="Text Generation"
+          downloads={26600}
+          likes={597}
+          moreContent="Here's more detailed content about this card that will be shown when expanded."
+        />
+        <LLMCard
+          title="Google Bard 1.0"
+          description="Text Generation"
+          downloads={26600}
+          likes={597}
+          moreContent="Here's more detailed content about this card that will be shown when expanded."
+        />
+        <LLMCard
+          title="OpenAI GPT-4.016"
+          description="Text Generation"
+          downloads={26600}
+          likes={597}
+          moreContent="Here's more detailed content about this card that will be shown when expanded."
+        />
       </Box>
     </Box>
   );

@@ -3,7 +3,7 @@
 import React from 'react';
 import { Box, Typography, Button, AppBar, Toolbar, Stack } from '@mui/material';
 
-export default function Bar({ llm, setLlm }: any) {
+export function Bar({ llm, setLlm }: any) {
   return (
     <AppBar
       position="fixed"
