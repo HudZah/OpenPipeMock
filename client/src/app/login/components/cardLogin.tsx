@@ -2,6 +2,8 @@
 
 import { Icons } from '@/components/ui/icons';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+
 import {
   Card,
   CardContent,
@@ -17,10 +19,11 @@ import { useState } from 'react';
 export function CardLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter();
 
   const handleLogin = () => {
     if (email === 'username' && password == 'password') {
-      alert('Logged in');
+      router.push('/home');
     }
   };
 
