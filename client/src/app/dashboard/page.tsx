@@ -1,7 +1,6 @@
 'use client';
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import {Bar} from './components/LLMBar';
 import { LLMCard } from './components/LLMCard';
 
 export default function Home() {
@@ -9,7 +8,6 @@ export default function Home() {
 
   return (
     <Box display="flex">
-      <Bar llm={llm} setLlm={setLlm} />
       <Box ml="240px" width="calc(100% - 240px)">
         <Box display="flex" flexDirection="row">
             <Typography variant="h1" fontSize={24}>Models</Typography>
