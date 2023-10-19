@@ -1,11 +1,11 @@
 import React from 'react';
-import { ModelCard } from '@/app/home/components/ModelCard';
+import { ModelCard } from '@/app/home/components/model-card';
 import { Grid, Typography, Box } from '@mui/material';
 
 export function Marketplace() {
   const models = [
     {
-      title: 'OpenAI GPT-3.502',
+      title: 'OpenAI GPT-3.5',
       shortDesc: 'Text Generation',
       longDesc: "OpenAI's flagship model for general-purpose text generation.",
       cost: '$0.01 per request',

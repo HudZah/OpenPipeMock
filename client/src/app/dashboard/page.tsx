@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
-import { ModelCard } from '../home/components/ModelCard';
+import { ModelCard } from '../home/components/model-card';
 
 export default function Marketplace() {
   const [llm, setLlm] = useState('Google');
