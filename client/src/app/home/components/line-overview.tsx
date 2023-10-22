@@ -82,7 +82,7 @@ export function LineOverview() {
         <Line
           type="monotone"
           dataKey="total"
-          stroke="8a2be2"
+          stroke="#8a2be2"
           strokeWidth={2}
           dot={{ r: 4 }}
           activeDot={{ r: 6 }}
