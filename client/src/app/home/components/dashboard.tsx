@@ -1,31 +1,26 @@
 import React from 'react';
-import Image from "next/image"
+import Image from 'next/image';
 
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs"
-import { CalendarDateRangePicker } from "./date-range-picker"
-import { MainNav } from "./main-nav"
-import { Overview } from "./overview"
+} from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { CalendarDateRangePicker } from './date-range-picker';
+import { MainNav } from './main-nav';
+import { Overview } from './overview';
 import { LineOverview } from './line-overview';
-import { Search } from "./search"
+import { Search } from './search';
 // import TeamSwitcher from "@/app/examples/dashboard/components/team-switcher"
 // import { UserNav } from "@/app/examples/dashboard/components/user-nav"
 
 export function Dashboard() {
   return (
-    <div style={{marginTop: '-12px'}}>
+    <div style={{ marginTop: '-12px' }}>
       <div className="md:hidden">
         <Image
           src="/examples/dashboard-light.png"
@@ -179,7 +174,7 @@ export function Dashboard() {
                 </Card>
               </div>
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-4">
+                <Card className="col-span-4">
                   <CardHeader>
                     <CardTitle>Expenditure Over Time</CardTitle>
                   </CardHeader>

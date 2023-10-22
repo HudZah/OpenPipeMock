@@ -1,25 +1,25 @@
-"use client"
+'use client';
 
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 const data = [
-    {
-      name: "Open AI",
-      total: parseFloat("$3,462.49".replace(/[\$,]/g, '')),
-    },
-    {
-      name: "Google Bard",
-      total: parseFloat("$2,231.89".replace(/[\$,]/g, '')),
-    },
-    {
-      name: "Meta AI",
-      total: parseFloat("$1,231.89".replace(/[\$,]/g, '')),
-    },
-    {
-      name: "Perplexity Labs",
-      total: parseFloat("$1,579.84".replace(/[\$,]/g, '')),
-    }
-  ]
+  {
+    name: 'Open AI',
+    total: parseFloat('$3,462.49'.replace(/[\$,]/g, '')),
+  },
+  {
+    name: 'Google Bard',
+    total: parseFloat('$2,231.89'.replace(/[\$,]/g, '')),
+  },
+  {
+    name: 'Meta AI',
+    total: parseFloat('$1,231.89'.replace(/[\$,]/g, '')),
+  },
+  {
+    name: 'Perplexity Labs',
+    total: parseFloat('$1,579.84'.replace(/[\$,]/g, '')),
+  },
+];
 
 export function Overview() {
   return (
@@ -39,8 +39,8 @@ export function Overview() {
           axisLine={false}
           tickFormatter={(value: any) => `$${value}`}
         />
-        <Bar dataKey="total" fill="violet" radius={[4, 4, 0, 0]} />
+        <Bar dataKey="total" fill="#8a2be2" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
-  )
+  );
 }
