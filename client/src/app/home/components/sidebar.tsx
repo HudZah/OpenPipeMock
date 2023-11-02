@@ -11,6 +11,7 @@ import {
   CreditCard,
   LogOut,
 } from 'lucide-react';
+import { useEffect } from 'react';
 
 export function Sidebar({
   className,
@@ -20,6 +21,10 @@ export function Sidebar({
   navigateTo: (component: string) => void;
   currentComponent: string;
 }) {
+  useEffect(() => {
+    navigateTo('/dashboard');
+  }, []);
+
   return (
     <div className={cn('pb-12', className)}>
       <div className="space-y-4 py-4">
