@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   description: 'The OpenAI Playground built using the components.',
 };
 
-export function Playground() {
+export default function Playground() {
   return (
     <>
       <div className="md:hidden">

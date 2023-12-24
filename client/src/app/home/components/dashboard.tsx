@@ -18,7 +18,7 @@ import { Search } from './search';
 // import TeamSwitcher from "@/app/examples/dashboard/components/team-switcher"
 // import { UserNav } from "@/app/examples/dashboard/components/user-nav"
 
-export function Dashboard() {
+export default function Dashboard() {
   return (
     <div style={{ marginTop: '-12px' }}>
       <div className="md:hidden">

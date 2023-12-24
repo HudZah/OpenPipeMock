@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
 import SearchIcon from '@mui/icons-material/Search';
 
-export function Marketplace() {
+export default function Marketplace() {
   return (
     <div>
       {/* <Box mt={2} sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -18,11 +18,11 @@ export function Marketplace() {
         </h1>
       </Box> */}
       <div className="container flex flex-col items-start justify-between space-y-2 py-4 sm:flex-row sm:items-center sm:space-y-0 md:h-16">
-        <h2 className="text-lg font-semibold">Marketplace</h2>
+        <h2 className="text-lg font-semibold">Your Fine Tunes</h2>
         <div className="relative">
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <Input
-            placeholder="Search models..."
+            placeholder="Search fine tunes..."
             className="h-10 lg:w-[370px] pl-10 border rounded"
           />
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Topbar() {
+export default function Topbar() {
   return (
     <div className="relative hidden h-full flex-col p-5  text-white dark:border-r lg:flex">
       <div className="relative z-20 flex items-center text-black text-lg font-medium">
@@ -16,7 +16,7 @@ export function Topbar() {
         >
           <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
         </svg>
-        Surjective AI
+        OpenPipe
       </div>
     </div>
   );

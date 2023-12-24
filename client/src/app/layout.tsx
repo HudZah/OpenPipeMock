@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Surjective',
-  description: 'Surjective.ai Application',
+  title: 'OpenPipe',
+  description: 'OpenPipe.ai Application',
 };
 
 export default function RootLayout({

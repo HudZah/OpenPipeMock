@@ -1,14 +1,17 @@
 'use client';
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Sidebar } from '@/app/home/components/sidebar';
-import { Playground } from './components/playground';
-import { Topbar } from './components/topbar';
-import { Dashboard } from './components/dashboard';
-import { Library } from './components/library';
-import { Marketplace } from './components/marketplace';
+const Sidebar = lazy(() => import('@/app/home/components/sidebar'));
+const Playground = lazy(() => import('./components/playground'));
+const Topbar = lazy(() => import('./components/topbar'));
+const Dashboard = lazy(() => import('./components/dashboard'));
+const Datasets = lazy(() => import('./components/datasets/datasets'));
+const FineTunes = lazy(() => import('./components/fine_tunes/fine_tunes'));
+const RequestLogs = lazy(
+  () => import('./components/request_logs/request-logs'),
+);
 
 export default function HomePage() {
   const [currentComponent, setCurrentComponent] = useState('dashboard');
@@ -18,15 +21,19 @@ export default function HomePage() {
     case '/dashboard':
       Component = Dashboard;
       break;
-    case '/library':
-      Component = Library;
+    case '/datasets':
+      Component = Datasets;
       break;
-    case '/marketplace':
-      Component = Marketplace;
+    case '/finetunes':
+      Component = FineTunes;
       break;
 
     case '/playground':
       Component = Playground;
+      break;
+
+    case '/request-logs':
+      Component = RequestLogs;
       break;
 
     default:
@@ -50,7 +57,9 @@ export default function HomePage() {
             currentComponent={currentComponent}
           />
           <div className="col-span-6 lg:border-l">
-            <Component />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Component />
+            </Suspense>
           </div>
         </div>
       </div>
