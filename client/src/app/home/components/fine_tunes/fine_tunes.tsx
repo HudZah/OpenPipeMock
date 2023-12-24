@@ -15,7 +15,7 @@ type FineTune = {
   baseModel: string;
   trainingSize: number;
   dataset: string;
-  status: string;
+  status_desc: string;
   sentAt: string;
   model: string;
   duration: number;
@@ -31,7 +31,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 14 11:04 AM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -45,7 +45,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 12 02:25 PM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -59,7 +59,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 15 04:47 PM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -73,7 +73,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 20 11:42 PM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -87,7 +87,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 17 11:30 AM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -101,7 +101,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 14 07:47 PM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -115,7 +115,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 14 02:47 AM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -129,7 +129,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 14 02:59 PM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -143,7 +143,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 18 10:02 PM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
@@ -157,7 +157,7 @@ const fineTunes: FineTune[] = [
     baseModel: 'GPT 3.5 TURBO',
     trainingSize: 80,
     dataset: 'recipes',
-    status: 'DEPLOYED',
+    status_desc: 'DEPLOYED',
     sentAt: 'December 18 02:55 AM',
     model: 'GPT 3.5 TURBO',
     duration: 80,
