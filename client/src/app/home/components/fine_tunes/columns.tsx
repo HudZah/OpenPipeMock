@@ -71,10 +71,10 @@ export const columns: ColumnDef<Task>[] = [
     cell: ({ row }) => <div>{row.getValue('dataset')}</div>,
   },
   {
-    accessorKey: 'status',
+    accessorKey: 'status_desc',
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Status" />
     ),
-    cell: ({ row }) => <div>{row.getValue('status')}</div>,
+    cell: ({ row }) => <div>{row.getValue('status_desc')}</div>,
   },
 ];
