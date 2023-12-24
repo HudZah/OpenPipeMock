@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import path from 'path';
+import path, { parse } from 'path';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import { z } from 'zod';
@@ -16,14 +16,14 @@ type Task = {
   inputTokens: number;
   outputTokens: number;
   cost: number;
-  status: string;
+  status: number;
 };
 
-const tasks = [
+const tasks: Task[] = [
   {
     sentAt: 'December 14 11:04 AM',
     model: 'openpipe:slimy-glitchy-join',
-    duration: '0.80s',
+    duration: 0.8,
     inputTokens: 6,
     outputTokens: 4,
     cost: 1,
@@ -32,7 +32,7 @@ const tasks = [
   {
     sentAt: 'December 12 02:25 PM',
     model: 'openpipe:shiny-glitchy-cut',
-    duration: '0.45s',
+    duration: 0.45,
     inputTokens: 7,
     outputTokens: 6,
     cost: 4,
@@ -41,7 +41,7 @@ const tasks = [
   {
     sentAt: 'December 15 04:47 PM',
     model: 'openpipe:glitchy-spotted-join',
-    duration: '0.87s',
+    duration: 0.87,
     inputTokens: 3,
     outputTokens: 3,
     cost: 5,
@@ -50,7 +50,7 @@ const tasks = [
   {
     sentAt: 'December 20 11:42 PM',
     model: 'openpipe:glitchy-shiny-join',
-    duration: '0.28s',
+    duration: 0.28,
     inputTokens: 4,
     outputTokens: 2,
     cost: 0,
@@ -59,7 +59,7 @@ const tasks = [
   {
     sentAt: 'December 17 11:30 AM',
     model: 'openpipe:spotted-slimy-cut',
-    duration: '0.40s',
+    duration: 0.4,
     inputTokens: 1,
     outputTokens: 10,
     cost: 1,
@@ -68,7 +68,7 @@ const tasks = [
   {
     sentAt: 'December 14 07:47 PM',
     model: 'openpipe:glitchy-shiny-join',
-    duration: '0.52s',
+    duration: 0.52,
     inputTokens: 4,
     outputTokens: 4,
     cost: 0,
@@ -77,7 +77,7 @@ const tasks = [
   {
     sentAt: 'December 14 02:47 AM',
     model: 'openpipe:spotted-slimy-cut',
-    duration: '0.22s',
+    duration: 0.22,
     inputTokens: 5,
     outputTokens: 5,
     cost: 1,
@@ -86,7 +86,7 @@ const tasks = [
   {
     sentAt: 'December 14 02:59 PM',
     model: 'openpipe:shiny-glitchy-join',
-    duration: '0.67s',
+    duration: 0.67,
     inputTokens: 1,
     outputTokens: 9,
     cost: 2,
@@ -95,7 +95,7 @@ const tasks = [
   {
     sentAt: 'December 18 10:02 PM',
     model: 'openpipe:slimy-slimy-join',
-    duration: '0.83s',
+    duration: 0.83,
     inputTokens: 10,
     outputTokens: 0,
     cost: 0,
@@ -104,7 +104,7 @@ const tasks = [
   {
     sentAt: 'December 18 02:55 AM',
     model: 'openpipe:slimy-shiny-join',
-    duration: '0.71s',
+    duration: 0.71,
     inputTokens: 5,
     outputTokens: 1,
     cost: 0,
@@ -115,18 +115,8 @@ const tasks = [
 export default function RequestLogs() {
   const [parsedTasks, setParsedTasks] = useState<Task[]>([]);
 
-  const transformedTasks = tasks.map((task) => ({
-    sentAt: task.sentAt,
-    model: task.model,
-    duration: parseFloat(task.duration),
-    inputTokens: task.inputTokens,
-    outputTokens: task.outputTokens,
-    cost: task.cost,
-    status: task.status.toString(),
-  }));
-
   useEffect(() => {
-    setParsedTasks(z.array(taskSchema).parse(transformedTasks));
+    setParsedTasks(z.array(taskSchema).parse(tasks));
   }, []);
 
   return (

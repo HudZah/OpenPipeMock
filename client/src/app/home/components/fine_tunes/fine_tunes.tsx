@@ -16,9 +16,15 @@ type FineTune = {
   trainingSize: number;
   dataset: string;
   status: string;
+  sentAt: string;
+  model: string;
+  duration: number;
+  inputTokens: number;
+  outputTokens: number;
+  cost: number;
 };
 
-const fineTunes = [
+const fineTunes: FineTune[] = [
   {
     id: 'openpipe:chubby-shoes-grab',
     createdAt: 'December 14 11:04 AM',
@@ -26,6 +32,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 14 11:04 AM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:shiny-glitchy-cut',
@@ -34,6 +46,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 12 02:25 PM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:glitchy-spotted-join',
@@ -42,6 +60,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 15 04:47 PM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:glitchy-shiny-join',
@@ -50,6 +74,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 20 11:42 PM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:spotted-slimy-cut',
@@ -58,6 +88,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 17 11:30 AM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:glitchy-shiny-join',
@@ -66,6 +102,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 14 07:47 PM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:spotted-slimy-cut',
@@ -74,6 +116,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 14 02:47 AM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:shiny-glitchy-join',
@@ -82,6 +130,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 14 02:59 PM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:slimy-slimy-join',
@@ -90,6 +144,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 18 10:02 PM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
   {
     id: 'openpipe:slimy-shiny-join',
@@ -98,6 +158,12 @@ const fineTunes = [
     trainingSize: 80,
     dataset: 'recipes',
     status: 'DEPLOYED',
+    sentAt: 'December 18 02:55 AM',
+    model: 'GPT 3.5 TURBO',
+    duration: 80,
+    inputTokens: 80,
+    outputTokens: 80,
+    cost: 80,
   },
 ];
 

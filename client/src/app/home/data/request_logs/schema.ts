@@ -7,7 +7,7 @@ export const taskSchema = z.object({
   inputTokens: z.number(),
   outputTokens: z.number(),
   cost: z.number(),
-  status: z.string(),
+  status: z.number(),
 });
 
 export type Task = z.infer<typeof taskSchema>;
