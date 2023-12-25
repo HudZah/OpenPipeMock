@@ -49,18 +49,16 @@ export default function HomePage() {
   return (
     <div className="hidden md:block">
       <Topbar />
-      <div className="border-t">
-        <div className="grid lg:grid-cols-7">
-          <Sidebar
-            className="hidden lg:block"
-            navigateTo={handleNavigation}
-            currentComponent={currentComponent}
-          />
-          <div className="col-span-6 lg:border-l">
-            <Suspense fallback={<div>Loading...</div>}>
-              <Component />
-            </Suspense>
-          </div>
+      <div className="grid lg:grid-cols-7">
+        <Sidebar
+          className="hidden lg:block"
+          navigateTo={handleNavigation}
+          currentComponent={currentComponent}
+        />
+        <div className="col-span-6 lg:border-l">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Component />
+          </Suspense>
         </div>
       </div>
     </div>
